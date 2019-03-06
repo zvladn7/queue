@@ -94,3 +94,12 @@ template <typename T> int QueueMyVersion<T>::size() const
 {
 	return size_;
 }
+
+//--------------------METHOD POP-----------------------------
+template <typename T> void QueueMyVersion<T>::pop()
+{
+	ElementOfQueue<T> * time = first_;
+	first_ = first_->next_;
+	first_->prev_ = 0;
+	delete time;
+}
